@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <div className='bg-gray-100 py-3 w-full flex '>
             <div className='items-center flex '>
-                <Link href="/sign-up"
+                <Link href="/"
                 className='items-center flex '
                 >
                 <Image src='/navlogo.jfif' alt=''
