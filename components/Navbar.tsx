@@ -2,8 +2,10 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 const Navbar = () => {
+   
+
     return (
-        <div className='bg-gray-100 py-3 justify-between px-5 items-center relative flex w-full shadow-[0_0.4px_0_0_gray]'>
+        <div className='bg-gray-100 py-3 justify-between px-5 items-center relative flex w-full '>
             {/* <div className='items-center flex justify-center'> */}
                 <Link href="/"
                 className='items-center flex justify-center'
