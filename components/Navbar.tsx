@@ -3,18 +3,19 @@ import Image from 'next/image'
 import Link from 'next/link'
 const Navbar = () => {
     return (
-        <div className='bg-gray-100 py-3 w-full flex '>
-            <div className='items-center flex '>
+        <div className='bg-gray-100 py-3 justify-between px-5 items-center relative flex w-full shadow-[0_0.4px_0_0_gray]'>
+            {/* <div className='items-center flex justify-center'> */}
                 <Link href="/"
-                className='items-center flex '
+                className='items-center flex justify-center'
                 >
                 <Image src='/navlogo.jfif' alt=''
-                    className='bg-transparent rounded-lg ml-2'
+                    className='bg-black rounded-lg ml-2'
                     width={30}
                     height={30} />
                 <h1 className='font-mono text-[30px] font-bold text-red-600'>EasyBank</h1>
                     </Link>
-            </div>
+            {/* </div> */}
+                    <Link href='signup'> Sign Up</Link>
         </div>
     )
 }

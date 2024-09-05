@@ -30,7 +30,7 @@ const Main = () => {
         })
     }
     return (
-        <div className='flex flex-col w-full h-[400px] m-[30px]  justify-between items-center'>
+        <div className='flex flex-col w-full h-[400px] m-[30px]  justify-between items-center relative'>
             <h1 className='font-mono text-[40px] font-bold '>Ur Bank</h1>
             <h2 className='font-mono text-[20px] font-bold'>Cr Amount : ${cashInput}</h2>
 
