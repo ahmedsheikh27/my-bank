@@ -10,7 +10,7 @@ const Navbar = () => {
                 <Link href="/"
                 className='items-center flex justify-center'
                 >
-                <Image src='/navlogo.jfif' alt=''
+                <Image src='/navlogo.jfif' alt='image'
                     className='bg-black rounded-lg ml-2'
                     width={30}
                     height={30} />
