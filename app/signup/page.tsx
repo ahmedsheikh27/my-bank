@@ -32,10 +32,7 @@ export const page = () => {
     return (
         <div className='h-screen w-full bg-white items-center flex justify-center py-3'>
         
-                {user ?
-
-                    <p>{user.email}</p>
-     :               <form onSubmit={handleRegister}>
+                          <form onSubmit={handleRegister}>
                         <div className='w-80 h-auto bg-white items-center m-3 flex flex-col p-3 rounded-md border-gray-300  border-solid border-[1px]'>
                             <h1>
                                 Sign Up
@@ -58,7 +55,7 @@ export const page = () => {
                         </div>
 
                     </form>
-    }
+    
         </div>
     )
 }
