@@ -1,20 +1,29 @@
 'use client'
-import React, { useState } from 'react'
+import React, {useState } from 'react'
 import { FaArrowTrendDown, FaArrowTrendUp } from "react-icons/fa6";
 const Main = () => {
     const [cashInput, setCashInput] = useState(0)
     const [amount, setAmount] = useState('')
     const [withdraw, setWithdraw] = useState(0)
     const [deposit, setDeposit] = useState(0)
+
+    // useEffect(() => {
+    //     const storedCash = localStorage.getItem('cash');
+    //     if (storedCash) {
+    //         setCashInput(JSON.parse(storedCash));
+    //     }
+    // }, [])
+
     const addAmount = () => {
         const cash = Number(amount)
         if (cash > 0) {
             setCashInput(balance => balance + cash)
-                setDeposit(cash)
-                setAmount('')
-            } else {
-                alert('Please enter a valid amount')
+            setDeposit(cash)
+            setAmount('')
+        } else {
+            alert('Please enter a valid amount')
         }
+        // localStorage.setItem('cash', JSON.stringify(cashInput))
     }
     const withdrawcash = () => {
         const cash = Number(amount)
@@ -22,6 +31,7 @@ const Main = () => {
             if (balance >= cash) {
                 setWithdraw(cash)
                 setAmount('')
+                // localStorage.removeItem('cash')
                 return balance - cash
             } else {
                 alert('please enter a valid amount')
@@ -30,11 +40,11 @@ const Main = () => {
         })
     }
     return (
-        <div className='flex flex-col w-full h-[400px] m-[30px]  justify-between items-center relative'>
+        <div className='flex flex-col w-full h-auto m-[30px]  justify-between items-center relative'>
             <h1 className='font-mono text-[40px] font-bold '>Ur Bank</h1>
             <h2 className='font-mono text-[20px] font-bold'>Cr Amount : ${cashInput}</h2>
 
-            <div className='flex w-full m-[30px] justify-between '>
+            <div className='flex flex-col sm:flex-row w-full m-[30px] justify-between'>
                 {/*Deposit Cash */}
                 <div className='flex flex-col shadow-md shadow-gray-400 bg-gray-100 h-[250px] w-[400px] justify-between items-center p-3 m-5 rounded-md'>
                     <h2 className='font-mono text-[20px] font-bold'>Deposit Cash</h2>

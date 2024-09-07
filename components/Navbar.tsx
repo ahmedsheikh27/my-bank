@@ -1,23 +1,49 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 const Navbar = () => {
-   
+    const [user, setUser] = useState<null | { email: string; name: string }>(null);
+
+
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, [user])
+
+    const signOut = () => {
+        setUser(null)
+        localStorage.removeItem('user')
+        alert('User is Sign Out')
+    }
 
     return (
         <div className='bg-gray-100 py-3 justify-between px-5 items-center relative flex w-full '>
             {/* <div className='items-center flex justify-center'> */}
-                <Link href="/"
+            <Link href="/"
                 className='items-center flex justify-center'
-                >
+            >
                 <Image src='/navlogo.jfif' alt='image'
                     className='bg-black rounded-lg ml-2'
                     width={30}
                     height={30} />
                 <h1 className='font-mono text-[30px] font-bold text-red-600'>EasyBank</h1>
-                    </Link>
+            </Link>
             {/* </div> */}
-                    <Link href='signup'> Sign Up</Link>
+            {user ?
+                <button
+                    onClick={signOut}
+                    type='submit'
+                    className=' p-3  rounded-md bg-red-600 text-white  border-none mt-3'>
+                    Sign Out</button>
+
+                :
+                <Link href='signup'
+                    className=' p-2 rounded-md bg-blue-600 text-white  border-none mt-3'>
+                    Sign Up</Link>
+            }
         </div>
     )
 }
