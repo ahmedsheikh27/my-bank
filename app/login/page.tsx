@@ -41,8 +41,8 @@ export const page = () => {
             setOldUser(user);
             setMessage('User is signed up');
             alert('User is signed up');
-            window.location.href = '/'
         }
+        window.location.href = '/'
     };
 
     // const signOut = () => {
