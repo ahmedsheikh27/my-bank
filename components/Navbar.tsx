@@ -41,7 +41,7 @@ const Navbar = () => {
 
                 :
                 <div className='flex justify-between'> 
-                <Link href='login'
+                <Link href='/signin'
                     className=' p-2 rounded-md bg-gray-400 mr-3 hover:bg-orange-400 text-white border-none mt-3'>
                     Log In</Link>
                 <Link href='signup'
