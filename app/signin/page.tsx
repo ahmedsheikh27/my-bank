@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
-export const page = () => {
+export const Page = () => {
     const [user, setUser] = useState({
         email: '',
         password: '',
@@ -101,4 +101,4 @@ export const page = () => {
         </>
     )
 }
-export default page
+export default Page
