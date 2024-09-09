@@ -40,9 +40,7 @@ const Main = () => {
     }
     const withdrawcash = () => {
         const cash = Number(amount)
-        if (!user) {
-            alert('Please register user first')
-        } else {
+        if (user) {
             setCashInput(balance => {
                 if (balance >= cash) {
                     setWithdraw(cash)
@@ -54,6 +52,8 @@ const Main = () => {
                     return balance
                 }
             })
+        } else {
+            alert('Please register user first')
         }
     }
     return (
