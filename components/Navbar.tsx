@@ -1,23 +1,23 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 const Navbar = () => {
-    // const [user, setUser] = useState<null | { email: string; name: string }>(null);
+    const [user, setUser] = useState<null | { email: string; name: string }>(null);
 
 
-    // useEffect(() => {
-    //     const storedUser = localStorage.getItem('user');
-    //     if (storedUser) {
-    //         setUser(JSON.parse(storedUser));
-    //     }
-    // }, [])
+    useEffect(() => {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, [])
 
-    // const signOut = () => {
-    //     setUser(null)
-    //     localStorage.removeItem('user')
-    //     alert('User is Sign Out')
-    // }
+    const signOut = () => {
+        setUser(null)
+        localStorage.removeItem('user')
+        alert('User is Sign Out')
+    }
 
     return (
         <div className='bg-gray-100 py-3 justify-between px-5 items-center relative flex w-full '>
@@ -32,7 +32,7 @@ const Navbar = () => {
                 <h1 className='font-mono text-[30px] font-bold text-red-600'>EasyBank</h1>
             </Link>
             {/* </div> */}
-            {/* {user ?
+            {user ?
                 <button
                     onClick={signOut}
                     type='submit'
@@ -48,7 +48,7 @@ const Navbar = () => {
                     className=' p-2 rounded-md bg-blue-600 text-white  border-none mt-3'>
                     Sign Up</Link>
                         </div>
-            } */}
+            }
         </div>
     )
 }
