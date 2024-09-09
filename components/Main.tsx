@@ -1,20 +1,20 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { FaArrowTrendDown, FaArrowTrendUp } from "react-icons/fa6";
 const Main = () => {
     const [cashInput, setCashInput] = useState(0)
     const [amount, setAmount] = useState('')
     const [withdraw, setWithdraw] = useState(0)
     const [deposit, setDeposit] = useState(0)
-    const [user, setUser] = useState<null | { email: string; name: string }>(null);
+    // const [user, setUser] = useState<null | { email: string; name: string }>(null);
 
 
-    useEffect(() => {
-        const storedUser = localStorage.getItem('user');
-        if (storedUser) {
-            setUser(JSON.parse(storedUser));
-        }
-    }, [])
+    // useEffect(() => {
+    //     const storedUser = localStorage.getItem('user');
+    //     if (storedUser) {
+    //         setUser(JSON.parse(storedUser));
+    //     }
+    // }, [])
 
     // useEffect(() => {
     //     const storedCash = localStorage.getItem('cash');
@@ -25,7 +25,7 @@ const Main = () => {
 
     const addAmount = () => {
         const cash = Number(amount)
-        if (user) {
+        // if (user) {
             if (cash > 0) {
                 setCashInput(balance => balance + cash)
                 setDeposit(cash)
@@ -33,14 +33,14 @@ const Main = () => {
             } else {
                 alert('Please enter a valid amount')
             }
-        } else {
-            alert('Please register user first')
-        }
+        // } else {
+        //     alert('Please register user first')
+        // }
         // localStorage.setItem('cash', JSON.stringify(cashInput))
     }
     const withdrawcash = () => {
         const cash = Number(amount)
-        if (user) {
+        // if (user) {
             setCashInput(balance => {
                 if (balance >= cash) {
                     setWithdraw(cash)
@@ -52,9 +52,9 @@ const Main = () => {
                     return balance
                 }
             })
-        } else {
-            alert('Please register user first')
-        }
+        // } else {
+        //     alert('Please register user first')
+        // }
     }
     return (
         <div className='flex flex-col w-full h-auto m-[30px]  justify-between items-center relative'>
