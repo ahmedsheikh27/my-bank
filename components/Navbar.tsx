@@ -44,7 +44,7 @@ const Navbar = () => {
                 <Link href='/signin'
                     className=' p-2 rounded-md bg-gray-400 mr-3 hover:bg-orange-400 text-white border-none mt-3'>
                     Log In</Link>
-                <Link href='signup'
+                <Link href='/signup'
                     className=' p-2 rounded-md bg-blue-600 text-white  border-none mt-3'>
                     Sign Up</Link>
                         </div>

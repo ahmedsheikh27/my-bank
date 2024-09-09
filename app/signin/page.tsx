@@ -71,7 +71,7 @@ export const page = () => {
                     <form onSubmit={handleRegister}>
                         <div className='w-80 h-auto bg-white items-center m-3 flex flex-col p-3 rounded-md border-gray-300  border-solid border-[1px]'>
                             <h1>
-                                Sign Up
+                                Sign In
                             </h1>
                             <div className='gap-5 mt-5 m-3  flex flex-col justify-between  '>
                                 <label> Name:
@@ -89,8 +89,8 @@ export const page = () => {
                                 type='submit'
                                 className='w-[220px] px-3 h-[40px] 0 rounded-2xl bg-blue-600 text-white  border-none mt-3 '>Register</button>
                             <div className='flex mt-6'>
-                                <p>Already have an account:</p>
-                                <Link href='/login' className='text-blue-600'>LogIn</Link>
+                                <p>Don't have an account:</p>
+                                <Link href='/signup' className='text-blue-600'>SignUp</Link>
                                 <p>here</p>
                             </div>
                         </div>
