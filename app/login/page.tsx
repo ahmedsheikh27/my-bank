@@ -22,7 +22,7 @@ export const page = () => {
         setUser({ ...user, [event.target.name]: event.target.value });
     };
 
-    const handleRegister = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const { email, name, password } = user;
         if (!email || !password || !name) {
@@ -68,10 +68,10 @@ export const page = () => {
             </div>
           :
           
-          <form onSubmit={handleRegister}>
+          <form onSubmit={handleLogin}>
                 <div className='w-80 h-auto bg-white items-center m-3 flex flex-col p-3 rounded-md border-gray-300  border-solid border-[1px]'>
                     <h1>
-                        Sign Up
+                        Sign In
                     </h1>
                     <div className='gap-5 mt-5 m-3  flex flex-col justify-between  '>
                         <label> Name:
@@ -87,14 +87,13 @@ export const page = () => {
 
                     <button
                         type='submit'
-                        className='w-[220px] px-3 h-[40px] 0 rounded-2xl bg-blue-600 text-white  border-none mt-3 '>Register</button>
-                <div className='flex mt-6'>
-<p>Already have an account:</p>
-<Link href='/login' className='text-blue-600'>LogIn</Link>
+                        className='w-[220px] px-3 h-[40px] 0 rounded-2xl bg-blue-600 text-white  border-none mt-3 '>Log In</button>
+<div className='flex mt-6'>
+<p>Don't have an account:</p>
+<Link href='/signup' className='text-blue-600'>SignUp</Link>
 <p>here</p>
 </div>
                 </div>
-
             </form>
         }
         </div>

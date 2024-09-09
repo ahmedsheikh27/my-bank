@@ -11,7 +11,7 @@ const Navbar = () => {
         if (storedUser) {
             setUser(JSON.parse(storedUser));
         }
-    }, [user])
+    }, [])
 
     const signOut = () => {
         setUser(null)
@@ -36,13 +36,18 @@ const Navbar = () => {
                 <button
                     onClick={signOut}
                     type='submit'
-                    className=' p-3  rounded-md bg-red-600 text-white  border-none mt-3'>
+                    className=' p-2  rounded-md bg-red-600 text-white  border-none mt-3'>
                     Sign Out</button>
 
                 :
+                <div className='flex justify-between'> 
+                <Link href='login'
+                    className=' p-2 rounded-md bg-gray-400 mr-3 hover:bg-orange-400 text-white border-none mt-3'>
+                    Log In</Link>
                 <Link href='signup'
                     className=' p-2 rounded-md bg-blue-600 text-white  border-none mt-3'>
                     Sign Up</Link>
+                        </div>
             }
         </div>
     )
